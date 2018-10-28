@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 
         votes.votes++
         votes.voters.push(message.author.id);
-        message.channel.send(`🎵 ${message.author}, gecmek icin oy verdin! **${votes.votes}/3** oy`);
+        message.channel.send(`${message.author}, gecmek icin oy verdin! **${votes.votes}/3** oy`);
 
         if (votes.votes > 3) return queue.connection.dispatcher.end();
     } else return queue.connection.dispatcher.end();
