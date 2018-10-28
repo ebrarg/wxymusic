@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor('RANDOM')
         .setThumbnail(bot.user.avatarURL)
         .setDescription(`**-=- Muzik listesi -=-**\n${queue.musics.map(music => 
-            `**-** ${music.title}`).join('\n')}\n\n🎵 **suan oynatilan:** ${queue.musics[0].title}`);
+            `**-** ${music.title}`).join('\n')}\n\n **suan oynatilan:** ${queue.musics[0].title}`);
 
     message.channel.send(embed);
 
