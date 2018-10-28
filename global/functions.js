@@ -82,7 +82,7 @@ module.exports = (bot, utils, ytdl, config) => {
         } else {
             queue.musics.push(music);
             if (playlist) return;
-            else return message.channel.send(`🎵 **${music.title}** listeye eklendi`);
+            else return message.channel.send(` **${music.title}** listeye eklendi`);
         }
         return;
     }
@@ -94,7 +94,7 @@ module.exports = (bot, utils, ytdl, config) => {
             queue.voiceChannel.leave();
             bot.queue.delete(guild.id);
             bot.votes.delete(guild.id);
-            return queue.textChannel.send(`🎵 Muzik bitti.`);
+            return queue.textChannel.send(`Muzik bitti.`);
         }
 
         let dispatcher = queue.connection.playStream(ytdl(music.url))
@@ -109,7 +109,7 @@ module.exports = (bot, utils, ytdl, config) => {
             .on('error', err => console.error(err));
         dispatcher.setVolumeLogarithmic(queue.volume / 100);
 
-        queue.textChannel.send(`🎵 **${music.title}** suan caliniyor!`);
+        queue.textChannel.send(`**${music.title}** suan caliniyor!`);
     }
 
 }
