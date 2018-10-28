@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if (queue && queue.playing) {
         queue.playing = false;
         queue.connection.dispatcher.pause();
-        return message.channel.send(`🎵 Muzik durduruldu`);
+        return message.channel.send(`Muzik durduruldu`);
     }
 
     return [message.delete(), utils.timed_msg('⚠ Herhangi bir muzik oynatilmiyor.', 5000)];
