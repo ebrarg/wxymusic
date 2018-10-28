@@ -7,6 +7,7 @@ const config = require('./settiings/config.json');
 const {YouTubeAPIKey} = require('./settiings/credentials.json');
 const utils = require('./global/utils');
 const bot = new discord.Client();
+const youtube = new YouTube(credentials.YouTubeAPIKey);
 
 require('./global/functions')(bot, utils, ytdl, config);
 
@@ -17,3 +18,4 @@ bot.queue = new Map() // Music Queue
 bot.votes = new Map(); // Vote Skip
 ready.ready(bot);
 message.message(bot, utils, config, discord);
+client.login(credentials.token);
